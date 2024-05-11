@@ -4,7 +4,7 @@
     const lavinmqUrl = process.env.CLOUDAMQP_URL
 
     const acknoledgement = async(msg)=>{
-        console.log(" [✅] Received" + msg)
+        console.log(" [✅] Received " + msg)
     setTimeout(() => {
         console.log("[✅] Image resized!");
         // Assuming you have a way to acknowledge the message, 
@@ -23,7 +23,8 @@
     console.log("[✅] Connection over channel established")
     console.log("[❎] Waiting for messages. To exit press CTRL+C ")
 
-    const q = await channel.queue('hello', {durable: true})
+    const q = await channel.queue('test2', {durable: true})
+    await channel.queueBind("test2", "test_ex1", "info");
 
     let counter = 0;
 

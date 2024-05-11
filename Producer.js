@@ -11,19 +11,21 @@ try {
     const channel = await connection.channel()
 
     console.log("[✅] Connection over channel established")
-
-    await channel.queue('hello', {durable: true})
+    await channel.exchangeDeclare("test_ex1", 'direct',{durable:false});
+    await channel.queue('test2', {durable: true})
+    // channel.publish('test-ex', 'info', Buffer.from(msg));
+    // channel.queueBind("test1", "test-ex", "");
 
     //Publish a message to the exchange
-    async function sendToQueue(routingKey, body) {
-    await channel.basicPublish("", routingKey, body, {deliveryMode: 2})
+    async function sendToQueue(exchange, routingKey, body) {
+    await channel.basicPublish(exchange, routingKey, body, {deliveryMode: 2})
     console.log("[📥] Message sent to queue", body)
     }
 
     //Send some messages to the queue
-    sendToQueue("hello", "Hi Tejash", );
-    sendToQueue("hello", "hope you are doing well");
-    sendToQueue("wrong_routing_key", "Hello World");
+    sendToQueue("test_ex1","test2", "Hi Tejash", );
+    sendToQueue("test_ex1","test2", "hope you are doing well");
+    sendToQueue("test_ex1","wrong_routing_key", "Hello World");
 
     setTimeout(() => {
     //Close the connection
