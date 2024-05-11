@@ -1,0 +1,21 @@
+{
+  "name": "lavinmq",
+    "type": "module",
+  
+  "version": "1.0.0",
+  "description": "a producer and consumer messaging queue",
+  "main": "index.js",
+  "scripts": {
+    
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "LavinMQ"
+  ],
+  "author": "aditya verma",
+  "license": "ISC",
+  "dependencies": {
+    "@cloudamqp/amqp-client": "^3.1.1",
+    "dotenv": "^16.4.5"
+  }
+}
