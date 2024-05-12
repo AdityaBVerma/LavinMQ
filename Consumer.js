@@ -23,7 +23,7 @@
     console.log("[✅] Connection over channel established")
     console.log("[❎] Waiting for messages. To exit press CTRL+C ")
 
-    const q = await channel.queue('test4', {durable: true})
+    const q = await channel.queue('test6', {durable: true})
 
 
     let counter = 0;
