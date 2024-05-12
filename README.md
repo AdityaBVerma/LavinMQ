@@ -19,19 +19,13 @@ Before running the code, make sure you have the following installed:
     git clone https://github.com/AdityaBVerma/LavinMQ
     ```
 
-2. Navigate to the project directory:
-
-    ```bash
-    cd rabbitmq-producer-consumer
-    ```
-
-3. Install dependencies for both producer and consumer:
+2. Install dependencies for both producer and consumer:
 
     ```bash
     npm install
     ```
 
-4. Set up environment variables:
+3. Set up environment variables:
 
     Create a `.env` file  with the following content:
 
@@ -42,7 +36,7 @@ Before running the code, make sure you have the following installed:
     Replace `<your_cloudamqp_url>` with your CloudAMQP URL.
 
 
-6. Create Producer.js and Consumer.js
+4. Create Producer.js and Consumer.js
 
     ```bash
     touch Producer.js
