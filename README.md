@@ -28,9 +28,6 @@ Before running the code, make sure you have the following installed:
 3. Install dependencies for both producer and consumer:
 
     ```bash
-    cd Producer
-    npm install
-    cd ../Consumer
     npm install
     ```
 
@@ -44,13 +41,8 @@ Before running the code, make sure you have the following installed:
 
     Replace `<your_cloudamqp_url>` with your CloudAMQP URL.
 
-5. Create a src directory
 
-    ```bash
-    mkdir src
-    ```
-
-6. Create Producer.js and Consumer.js in the src directory
+6. Create Producer.js and Consumer.js
 
     ```bash
     touch Producer.js
@@ -66,12 +58,6 @@ Before running the code, make sure you have the following installed:
 
 To run the producer:
 
-1. Navigate to the `Producer.js` directory created in the src folder:
-
-    ```bash
-    cd Producer.js
-    ```
-
 2. Run the producer script:
 
     ```bash
@@ -81,14 +67,6 @@ To run the producer:
 The producer will connect to the RabbitMQ server specified in the environment variables, send messages to the queue, and then exit after a specified timeout.
 
 ### Consumer
-
-To run the consumer directory created in the src folder:
-
-1. Navigate to the `consumer` directory:
-
-    ```bash
-    cd Consumer.js
-    ```
 
 2. Run the consumer script:
 
