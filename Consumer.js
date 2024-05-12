@@ -3,14 +3,12 @@
 
     const lavinmqUrl = process.env.CLOUDAMQP_URL
 
-    const acknoledgement = async(msg)=>{
+    const acknoledgement = async(channel, msg)=>{
         console.log(" [✅] Received " + msg)
     setTimeout(() => {
         console.log("[✅] Image resized!");
-        // Assuming you have a way to acknowledge the message, 
-        // you would call it here
-        // For example:
-        
+        channel.close()
+        //need to ack
     }, 5000);
     }
 
@@ -35,7 +33,7 @@
     console.error(error)
     }
     })
-    await acknoledgement(`${counter} messages`)
+    await acknoledgement(channel, `${counter} messages`)
 
     //When the process is terminated, close the connection
     process.on('SIGINT', () => {

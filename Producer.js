@@ -13,8 +13,6 @@ try {
     console.log("[✅] Connection over channel established")
     await channel.exchangeDeclare("test_ex5", 'direct',{durable:false});
     await channel.queue('test6', {durable: true})
-    // channel.publish('test-ex', 'info', Buffer.from(msg));
-    // channel.queueBind("test1", "test-ex", "");
 
     //Publish a message to the exchange
     async function sendToQueue(exchange, routingKey, body) {
@@ -24,10 +22,9 @@ try {
     }
 
     //Send some messages to the queue
-    // sendToQueue("test_ex3","test4", "Hi Tejash");
-    sendToQueue("test_ex5","test6", "hope you are ");
-    // sendToQueue("test_ex3","test4", "hello thejas ");
-    // sendToQueue("test_ex3","wrong_routing_key", "Hello World");
+
+    await sendToQueue("test_ex5","test6", "hope you are ");
+    await sendToQueue("test_ex5","test6", "aditya ");
 
     setTimeout(() => {
     //Close the connection
